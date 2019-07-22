@@ -17,7 +17,8 @@ function handler (request, response) {
       response.end(file);
     })
 
-
+  }
+/*
   } else if (endpoint === '/node') {
     response.writeHead(200, {"Content-Type": "text/html"});
     response.write(`clicked the /node link`);
@@ -27,7 +28,7 @@ function handler (request, response) {
     response.write(`clicked the /girls link`);
     response.end(file);
   }
-
+*/
 
 }
 
