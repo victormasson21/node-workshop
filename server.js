@@ -1,11 +1,33 @@
 var http = require('http');
-
-var message = 'I am so happy to be part of the node girls workshop';
+var fs = require('fs');
 
 function handler (request, response) {
-  response.writeHead(200, {"Content-Type": "text/html"});
-  response.write(message);
-  response.end();
+  var method = request.method;
+  var endpoint = request.url;
+
+  if (endpoint === `/`) {
+    response.writeHead(200, {"Content-Type": "text/html"});
+
+    fs.readFile(__dirname + '/public/index.html', function(error, file) {
+      if (error) {
+        console.log(error);
+        return;
+      }
+
+      response.end(file);
+    })
+
+
+  } else if (endpoint === '/node') {
+    response.writeHead(200, {"Content-Type": "text/html"});
+    response.write(`clicked the /node link`);
+    response.end(file);
+  } else if (endpoint === '/girls') {
+    response.writeHead(200, {"Content-Type": "text/html"});
+    response.write(`clicked the /girls link`);
+    response.end(file);
+  }
+
 
 }
 
