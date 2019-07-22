@@ -15,9 +15,7 @@ function handler (request, response) {
       }
 
       response.end(file);
-    })
-
-  }
+    });
 /*
   } else if (endpoint === '/node') {
     response.writeHead(200, {"Content-Type": "text/html"});
@@ -29,6 +27,8 @@ function handler (request, response) {
     response.end(file);
   }
 */
+
+}
 
 }
 
